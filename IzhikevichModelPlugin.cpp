@@ -264,7 +264,7 @@ void IzhikevichModelPlugin::update(DefaultGUIModel::update_flags_t flag)
     break;
 
   case MODIFY:
-    freq = 1.0 / (period * 1e-3);
+
     a = getParameter("a").toDouble();
     b = getParameter("b").toDouble();
     c = getParameter("c").toDouble();
@@ -277,7 +277,7 @@ void IzhikevichModelPlugin::update(DefaultGUIModel::update_flags_t flag)
     break;
 
   case UNPAUSE:
-    freq = 1.0 / (period * 1e-3);
+
     break;
 
   case PAUSE:
@@ -285,7 +285,7 @@ void IzhikevichModelPlugin::update(DefaultGUIModel::update_flags_t flag)
 
   case PERIOD:
     period = RT::System::getInstance()->getPeriod() * 1e-6; // ms
-    freq = 1.0 / (period * 1e-3);
+
     break;
 
   default:
