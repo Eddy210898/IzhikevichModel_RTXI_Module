@@ -248,7 +248,6 @@ void IzhikevichModelPlugin::update(DefaultGUIModel::update_flags_t flag)
   {
   case INIT:
     period = RT::System::getInstance()->getPeriod() * 1e-6; // ms
-    freq = 1.0 / (period * 1e-3);
 
     setParameter("I", I);
 
