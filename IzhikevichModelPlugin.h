@@ -23,17 +23,17 @@
 
 #include <default_gui_model.h>
 
-class PluginTemplate : public DefaultGUIModel
+class IzhikevichModelPlugin : public DefaultGUIModel
 {
 
   Q_OBJECT
 
 public:
-  PluginTemplate(void);
-  virtual ~PluginTemplate(void);
+  IzhikevichModelPlugin(void);
+  virtual ~IzhikevichModelPlugin(void);
 
   void execute(void);
-  void createGUI(DefaultGUIModel::variable_t*, int);
+  void createGUI(DefaultGUIModel::variable_t *, int);
   void customizeGUI(void);
 
 protected:
@@ -46,10 +46,10 @@ private:
 
   void initParameters();
 
-private slots:
-  // these are custom functions that can also be connected to events
-  // through the Qt API. they must be implemented in plugin_template.cpp
+  double getYValue(int kValue, double y, double dX, double k = 0);
+  double getXValue(int kValue, double x, double dX);
+  double getNextRungeKuta(double Xo, double Yo, double dX, double F(double, double, double[]), double args[]);
+  void izhikevichStep(double vO, double uO, double t, double dT, float I, double a, double b, double c, double d);
 
-  void aBttn_event(void);
-  void bBttn_event(void);
+private slots:
 };

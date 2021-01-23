@@ -1,9 +1,9 @@
-PLUGIN_NAME = plugin_template
+PLUGIN_NAME = IzhikevichModelPlugin
 
-HEADERS = plugin-template.h
+HEADERS = IzhikevichModelPlugin.h
 
-SOURCES = plugin-template.cpp\
-          moc_plugin-template.cpp\
+SOURCES = IzhikevichModelPlugin.cpp\
+          moc_IzhikevichModelPlugin.cpp\
 
 LIBS = 
 
