@@ -146,7 +146,7 @@ double getXValue(int kValue, double x, double dX)
   }
 }
 
-double getYValue(int kValue, double y, double dX, double k /*= 0*/)
+double getYValue(int kValue, double y, double dX, double k = 0)
 {
   if (kValue == 1)
   {
