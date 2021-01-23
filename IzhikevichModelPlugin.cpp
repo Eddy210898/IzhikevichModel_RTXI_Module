@@ -295,6 +295,7 @@ void IzhikevichModelPlugin::update(DefaultGUIModel::update_flags_t flag)
 
 void IzhikevichModelPlugin::customizeGUI(void)
 {
+  /*
   QGridLayout *customlayout = DefaultGUIModel::getLayout();
 
   QGroupBox *button_group = new QGroupBox;
@@ -310,4 +311,5 @@ void IzhikevichModelPlugin::customizeGUI(void)
 
   customlayout->addWidget(button_group, 0, 0);
   setLayout(customlayout);
+  */
 }
