@@ -227,7 +227,7 @@ void IzhikevichModelPlugin::izhikevichStep(double vO, double uO, double t, doubl
 
 void IzhikevichModelPlugin::execute(void)
 {
-  izhikevichStep(v, u, period, dT, I, a, b, c, d);
+  izhikevichStep(v, u, period, dt, I, a, b, c, d);
   output(0) = v;
   return;
 }

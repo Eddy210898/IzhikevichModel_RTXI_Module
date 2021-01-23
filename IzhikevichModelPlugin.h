@@ -49,7 +49,7 @@ private:
   double getYValue(int kValue, double y, double dX, double k = 0);
   double getXValue(int kValue, double x, double dX);
   double getNextRungeKuta(double Xo, double Yo, double dX, double F(double, double, double[]), double args[]);
-  void izhikevichStep(double vO, double uO, double t, double dT, float I, double a, double b, double c, double d);
+  void izhikevichStep(double vO, double uO, double t, double dT, double I, double a, double b, double c, double d);
 
 private slots:
 };
