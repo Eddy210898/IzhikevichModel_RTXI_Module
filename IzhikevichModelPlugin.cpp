@@ -126,7 +126,7 @@ IzhikevichModelPlugin::~IzhikevichModelPlugin(void)
 {
 }
 
-double getXValue(int kValue, double x, double dX)
+double IzhikevichModelPlugin::getXValue(int kValue, double x, double dX)
 {
   if (kValue == 1)
   {
@@ -146,7 +146,7 @@ double getXValue(int kValue, double x, double dX)
   }
 }
 
-double getYValue(int kValue, double y, double dX, double k = 0)
+double IzhikevichModelPlugin::getYValue(int kValue, double y, double dX, double k = 0)
 {
   if (kValue == 1)
   {
@@ -166,7 +166,7 @@ double getYValue(int kValue, double y, double dX, double k = 0)
   }
 }
 
-double getNextRungeKuta(double Xo, double Yo, double dX, double F(double, double, double[]), double args[])
+double IzhikevichModelPlugin::getNextRungeKuta(double Xo, double Yo, double dX, double F(double, double, double[]), double args[])
 {
   double x = getXValue(1, Xo, dX);
   double y = getYValue(1, Yo, dX);
