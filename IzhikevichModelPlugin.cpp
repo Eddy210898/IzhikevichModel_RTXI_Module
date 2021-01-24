@@ -25,13 +25,6 @@
 #include <iostream>
 #include <main_window.h>
 
-//Variables para el modelo
-
-double v, a, b, c, d, u;
-
-//Variable de entorno de ejecucion
-double I, dt;
-
 extern "C" Plugin::Object *
 createRTXIPlugin(void)
 {
@@ -240,6 +233,7 @@ void IzhikevichModelPlugin::initParameters(void)
   d = 2;
   v = -65;
   u = v * b;
+  dt = 0.1;
 }
 
 void IzhikevichModelPlugin::update(DefaultGUIModel::update_flags_t flag)

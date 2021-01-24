@@ -40,9 +40,13 @@ protected:
   virtual void update(DefaultGUIModel::update_flags_t);
 
 private:
-  double some_parameter;
-  double some_state;
   double period;
+  //Variables para el modelo
+
+  double v, a, b, c, d, u;
+
+  //Variable de entorno de ejecucion
+  double I, dt;
 
   void initParameters();
 
