@@ -77,22 +77,12 @@ static DefaultGUIModel::variable_t vars[] = {
     },
 
     {
-        "Isyn (nA)",
-        "Synaptic input current (in nA)",
+        "Isyn",
+        "",
         DefaultGUIModel::INPUT,
     },
     {
         "v",
-        "",
-        DefaultGUIModel::STATE,
-    },
-    {
-        "dt",
-        "",
-        DefaultGUIModel::STATE,
-    },
-    {
-        "syn",
         "",
         DefaultGUIModel::STATE,
     },
@@ -196,7 +186,6 @@ void IzhikevichModelPlugin::izhikevichStep(double vO, double uO, double t, doubl
       vO, //4
       uO, //5
       I   //6
-
   };
   double vF = getNextRungeKuta(
       t, vO, dT, [](double t, double v, double args[]) {
@@ -241,7 +230,7 @@ void IzhikevichModelPlugin::update(DefaultGUIModel::update_flags_t flag)
   switch (flag)
   {
   case INIT:
-    period = RT::System::getInstance()->getPeriod() * 1e-6; // ms
+    period = RT::System::getInstance()->getPeriod() * 1e-8; // ms
 
     setParameter("I", I);
 
@@ -254,7 +243,6 @@ void IzhikevichModelPlugin::update(DefaultGUIModel::update_flags_t flag)
     setParameter("u0", u);
 
     setState("v", v);
-    setState("dt", dt);
     break;
 
   case MODIFY:
@@ -278,7 +266,7 @@ void IzhikevichModelPlugin::update(DefaultGUIModel::update_flags_t flag)
     break;
 
   case PERIOD:
-    period = RT::System::getInstance()->getPeriod() * 1e-6; // ms
+    period = RT::System::getInstance()->getPeriod() * 1e-8; // ms
 
     break;
 
