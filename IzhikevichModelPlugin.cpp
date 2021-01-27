@@ -82,6 +82,11 @@ static DefaultGUIModel::variable_t vars[] = {
         DefaultGUIModel::INPUT,
     },
     {
+        "Input(mV)",
+        "",
+        DefaultGUIModel::STATE,
+    },
+    {
         "v",
         "",
         DefaultGUIModel::STATE,
@@ -246,6 +251,7 @@ void IzhikevichModelPlugin::update(DefaultGUIModel::update_flags_t flag)
     setParameter("v0", v);
     setParameter("u0", u);
 
+    setState("Input(mV)", I);
     setState("v", v);
     break;
 
