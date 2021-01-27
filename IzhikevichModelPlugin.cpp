@@ -209,6 +209,10 @@ void IzhikevichModelPlugin::izhikevichStep(double vO, double uO, double t, doubl
 
 void IzhikevichModelPlugin::execute(void)
 {
+  if (iD)
+  {
+    I = input(0);
+  }
   izhikevichStep(v, u, period, dt, I, a, b, c, d);
   output(0) = v;
   return;
@@ -256,6 +260,14 @@ void IzhikevichModelPlugin::update(DefaultGUIModel::update_flags_t flag)
 
     v = getParameter("v0").toDouble();
     u = getParameter("u0").toDouble();
+    if (I < 0)
+    {
+      iD = true;
+    }
+    else
+    {
+      iD = false;
+    }
     break;
 
   case UNPAUSE:
